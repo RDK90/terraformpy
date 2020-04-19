@@ -1,0 +1,5 @@
+terraform.tfstate*
+.terraform*
+__pycache__
+tf.plan
+Pipfile*

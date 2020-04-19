@@ -1,0 +1,31 @@
+{
+    "provider": {
+        "google": {
+            "project": "define_project_here",
+            "region": "define_region_here"
+        }
+    },
+    "resource": {
+        "google_compute_instance_template": {
+            "name_of_instance_template": {
+                "disk": {
+                    "disk_size_gb": 5,
+                    "source_image": "cos-cloud/cos-stable-81-12871-69-0"
+                },
+                "machine_type": "f1-micro",
+                "metadata": {
+                    "gce-container-declaration": "spec:\n  containers:\n    - name: name_of_instance_template\n      image: 'path_to_container_in_registry'\n      stdin: false\n      tty: false\n  restartPolicy: Always\n"
+                },
+                "name": "name_of_instance_template",
+                "network_interface": {
+                    "access_config": {},
+                    "network": "development_network",
+                    "subnetwork": "development_subnet"
+                },
+                "tags": [
+                    "network_tags"
+                ]
+            }
+        }
+    }
+}
